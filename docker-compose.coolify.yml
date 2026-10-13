@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-opendots}
-      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB:-opendots}
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -23,7 +23,7 @@ services:
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_USER: ${POSTGRES_USER:-opendots}
-      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB:-opendots}
       BOAT_API_KEY: ${BOAT_API_KEY}
       BOAT_ORG_ID: ${BOAT_ORG_ID:-}
